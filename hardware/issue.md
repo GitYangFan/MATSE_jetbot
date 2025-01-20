@@ -1,3 +1,4 @@
-rosrun camera_calibration cameracalibrator.py --size 8x10 --square 0.2 image:=/camera/raw camera:=/camera
-Waiting for service /camera/set_camera_info ...
-Service not found
+rosdep install camera_calibration
+ERROR: the following packages/stacks could not have their rosdep keys resolved
+to system dependencies:
+camera_calibration: Cannot locate rosdep definition for [rostest]
