@@ -6,6 +6,10 @@ roscore
 rosrun jetbot_ros jetbot_camera
 rostopic list # check if the camera node exists
 rosrun rqt_image_view rqt_image_view # test the camera view
+
+# Alternative
+cd ~/MATSE_jetbot/launch
+roslaunch jetbot.launch
 ```
 
 ## Step1: Color correction with pink tint
