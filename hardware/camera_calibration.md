@@ -30,7 +30,7 @@ sudo chown root:root /var/nvidia/nvcam/settings/camera_overrides.isp
 (ref: https://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration)
 ```python
 rosdep install camera_calibration  # getting the dependencies and compiling the driver
-rosrun camera_calibration cameracalibrator.py --size 8x10 --square 0.2 image:=/camera/image_raw camera:=/camera
+rosrun camera_calibration cameracalibrator.py --size 8x10 --square 0.2 image:=/camera/raw camera:=/camera
 ```
 
 ## Step3: Apply the calibration using image_proc
