@@ -4,6 +4,7 @@
 ```python
 roscore
 rosrun jetbot_ros jetbot_camera
+rostopic list # check if the camera node exists
 ```
 
 ## Step1: Color correction with pink tint
@@ -30,5 +31,5 @@ rosrun camera_calibration cameracalibrator.py --size 8x10 --square 0.2 image:=/c
 ## Step3: Apply the calibration using image_proc
 (ref: https://wiki.ros.org/image_proc#image_proc.2Fcturtle.Mini_Tutorial)
 ```python
-ROS_NAMESPACE=my_camera rosrun image_proc image_proc  # activate the image_proc node for rectification
+ROS_NAMESPACE=camera rosrun image_proc image_proc  # activate the image_proc node for rectification
 ```
