@@ -26,6 +26,10 @@
 #include <sensor_msgs/image_encodings.h>
 #include <sensor_msgs/CameraInfo.h>
 
+#include <image_transport/image_transport.h>
+#include <camera_calibration_parsers/parse.h>
+#include <camera_calibration_parsers/parse_yml.h>
+
 #include <jetson-utils/gstCamera.h>
 
 #include "image_converter.h"
@@ -101,7 +105,7 @@ bool aquireFrame()
 	cam_info_msg.header.frame_id = msg.header.frame_id;
     cam_info_msg.header.stamp = msg.header.stamp;
 	// publish the message
-	cam_pub->publish(msg, cam_info_msg);
+	camera_pub->publish(msg, cam_info_msg);
 	ROS_DEBUG("published camera frame");
 	return true;
 }
