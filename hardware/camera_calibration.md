@@ -29,8 +29,7 @@ sudo chown root:root /var/nvidia/nvcam/settings/camera_overrides.isp
 ## Step2: Calibrate the camera using camera_calibration
 (ref: https://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration)
 ```python
-rosdep install camera_calibration  # getting the dependencies and compiling the driver
-rosrun camera_calibration cameracalibrator.py --size 8x10 --square 0.2 image:=/camera/raw camera:=/camera
+rosrun camera_calibration cameracalibrator.py --size 7x9 --square 0.2 image:=/jetbot_camera/raw camera:=/jetbot_camera --no-service-check
 ```
 
 ## Step3: Apply the calibration using image_proc
