@@ -92,9 +92,17 @@ int main(int argc, char **argv)
     camera_info_pub = &camera_info_publisher;
 
     // create camera_info_manager and load camera calibration parameters from YAML file
-    std::string camera_info_url;
-    private_nh.param<std::string>("camera_info_url", camera_info_url, "package://your_package/config/camera_info.yaml");  // YAML文件路径
+    std::string camera_info_url = "/home/jetbot/workspace/catkin_ws/src/jetbot_ros/ost.yaml";  // 直接使用绝对路径
     camera_info_manager_ = new camera_info_manager::CameraInfoManager(nh, "camera", camera_info_url);
+    if (camera_info_manager_->isCalibrated())
+    {
+        camera_info_msg = camera_info_manager_->getCameraInfo();
+        ROS_INFO("Camera calibration loaded successfully.");
+    }
+    else
+    {
+        ROS_WARN("Camera calibration file not found.");
+    }
 
     if (camera_info_manager_->isCalibrated())
     {
